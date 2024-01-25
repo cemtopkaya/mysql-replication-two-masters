@@ -3,7 +3,7 @@ version: "3.8"
 services:
 
   sunucu1:
-    image: mysql:latest
+    image: mysql:8.0.36-debian
     container_name: mysql1
     hostname: mysql1
     environment:
@@ -18,7 +18,7 @@ services:
       - ./volume/server1/backup:/backup
 
   sunucu2:
-    image: mysql:latest
+    image: mysql:8.0.36-debian
     container_name: mysql2
     hostname: mysql2
     environment:
