@@ -11,7 +11,7 @@ services:
       - MYSQL_DATABASE=mydata -dit
     ports:
       - 33061:3306
-    volume:
+    volumes:
       - ./volume/server1/conf.d:/etc/mysql/mysql.conf.d/
       - ./volume/server1/data:/var/lib/mysql
       - ./volume/server1/log:/var/log/mysql
@@ -26,7 +26,7 @@ services:
       - MYSQL_DATABASE=mydata -dit
     ports:
       - 33062:3306
-    volume:
+    volumes:
       - ./volume/server2/conf.d:/etc/mysql/mysql.conf.d/
       - ./volume/server2/data:/var/lib/mysql
       - ./volume/server2/log:/var/log/mysql
