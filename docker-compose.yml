@@ -1,0 +1,34 @@
+version: "3.8"
+
+services:
+
+  sunucu1:
+    image: mysql:latest
+    container_name: mysql1
+    hostname: mysql1
+    environment:
+      - MYSQL_ROOT_PASSWORD=mysql1pass
+      - MYSQL_DATABASE=mydata -dit
+    ports:
+      - 33061:3306
+    volume:
+      - ./volume/server1/conf.d:/etc/mysql/mysql.conf.d/
+      - ./volume/server1/data:/var/lib/mysql
+      - ./volume/server1/log:/var/log/mysql
+      - ./volume/server1/backup:/backup
+
+  sunucu2:
+    image: mysql:latest
+    container_name: mysql2
+    hostname: mysql2
+    environment:
+      - MYSQL_ROOT_PASSWORD=mysql2pass
+      - MYSQL_DATABASE=mydata -dit
+    ports:
+      - 33062:3306
+    volume:
+      - ./volume/server2/conf.d:/etc/mysql/mysql.conf.d/
+      - ./volume/server2/data:/var/lib/mysql
+      - ./volume/server2/log:/var/log/mysql
+      - ./volume/server2/backup:/backup
+
