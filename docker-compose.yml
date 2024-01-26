@@ -21,6 +21,8 @@ services:
     image: mysql:8.0.36-debian
     container_name: mysql2
     hostname: mysql2
+    links: 
+      - mysql1
     environment:
       - MYSQL_ROOT_PASSWORD=mysql2pass
       - MYSQL_DATABASE=mydata -dit
